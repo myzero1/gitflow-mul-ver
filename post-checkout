@@ -25,26 +25,26 @@ get_curent_branch(){
 select_gitflow_branch(){
 	# get the current branch
 	get_curent_branch
-	current_branch_rel=`echo $current_branch|cut -d "/" -f2` 
-	version=`echo $current_branch_rel|cut -d "_" -f2` 
+	current_branch_rel=`echo $current_branch|cut -d "/" -f2`
+	version=`echo $current_branch_rel|cut -d "_" -f2`
 
 	master_tem="master_${version}"
 	master_tem_branch=$(git branch | sed -e 's/\s//g' | sed -e "/$master_tem/!d")
-	if [ "$master_tem_branch" != "" ]  
-	then  
+	if [ "$master_tem_branch" != "" ]
+	then
 	    gitflow_branch_master=$master_tem
-	else  
+	else
 	    gitflow_branch_master="master"
-	fi  
+	fi
 
 	develop_tem="develop_${version}"
 	develop_tem_branch=$(git branch | sed -e 's/\s//g' | sed -e "/$develop_tem/!d")
-	if [ "$develop_tem_branch" != "" ]  
-	then  
+	if [ "$develop_tem_branch" != "" ]
+	then
 	    gitflow_branch_develop=$develop_tem
-	else  
+	else
 	    gitflow_branch_develop="develop"
-	fi  
+	fi
 
 }
 
@@ -73,6 +73,6 @@ if [ "$gitflow" != "" ]; then
 	# echo "It is gitflow"
 	replace_gitflow_branch
 	echo -e "---you are using sourcetree_gitflow_Multi-Version-Concurrency---\n"
-else  
+else
     echo "Use gitflow,please."
 fi

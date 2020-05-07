@@ -1,7 +1,6 @@
 #!/bin/bash
 
 # init gitflow-mul-ver
-# cd /path/to/gitrepo && bash /C/Users/woogle/Desktop/init.sh
 # cd /path/to/gitrepo
 # git clone https://github.com/myzero1/gitflow-mul-ver.git
 # cd gitflow-mul-ver
